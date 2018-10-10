@@ -23432,6 +23432,8 @@ Standard 3-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="JP4" library="MotionSign" library_urn="urn:adsk.eagle:library:3048452" deviceset="POWER_JACK" device="PTH" package3d_urn="urn:adsk.eagle:package:3048907/2" value="POWER_JACKPTH"/>
 <part name="SUPPLY3" library="MotionSign" library_urn="urn:adsk.eagle:library:3048452" deviceset="VCC" device=""/>
 <part name="BLINKERS" library="SparkFun-Connectors" deviceset="M03" device="JST-PTH"/>
+<part name="EFFECT_LEDS" library="MotionSign" library_urn="urn:adsk.eagle:library:3048452" deviceset="CONN_04" device="JST-PTH" package3d_urn="urn:adsk.eagle:package:3048844/2"/>
+<part name="GND11" library="MotionSign" library_urn="urn:adsk.eagle:library:3048452" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23531,6 +23533,8 @@ PB5 = D13 = SCK</text>
 <instance part="JP4" gate="G$1" x="35.56" y="175.26"/>
 <instance part="SUPPLY3" gate="1" x="-7.62" y="48.26"/>
 <instance part="BLINKERS" gate="G$1" x="7.62" y="157.48"/>
+<instance part="EFFECT_LEDS" gate="G$1" x="10.16" y="129.54"/>
+<instance part="GND11" gate="1" x="17.78" y="121.92"/>
 </instances>
 <busses>
 </busses>
@@ -23696,6 +23700,12 @@ PB5 = D13 = SCK</text>
 <wire x1="15.24" y1="154.94" x2="17.78" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="17.78" y1="152.4" x2="17.78" y2="154.94" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="EFFECT_LEDS" gate="G$1" pin="1"/>
+<wire x1="15.24" y1="127" x2="17.78" y2="127" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="127" x2="17.78" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="GND11" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="AREF" class="0">
@@ -23882,6 +23892,12 @@ PB5 = D13 = SCK</text>
 <pinref part="SUPPLY3" gate="1" pin="VCC"/>
 <wire x1="-7.62" y1="45.72" x2="-7.62" y2="48.26" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="EFFECT_LEDS" gate="G$1" pin="4"/>
+<wire x1="15.24" y1="134.62" x2="22.86" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="134.62" x2="22.86" y2="137.16" width="0.1524" layer="91"/>
+<label x="22.86" y="137.16" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="A5" class="0">
 <segment>
@@ -23975,25 +23991,11 @@ PB5 = D13 = SCK</text>
 <label x="55.88" y="76.2" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="D9" class="0">
-<segment>
-<wire x1="53.34" y1="45.72" x2="55.88" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PB1(OC1A)"/>
-<label x="55.88" y="45.72" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="A1" class="0">
 <segment>
 <wire x1="53.34" y1="91.44" x2="55.88" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PC1(ADC1)"/>
 <label x="55.88" y="91.44" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="D8" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB0(ICP)"/>
-<wire x1="53.34" y1="48.26" x2="55.88" y2="48.26" width="0.1524" layer="91"/>
-<label x="55.88" y="48.26" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="A0" class="0">
@@ -24240,6 +24242,30 @@ PB5 = D13 = SCK</text>
 <pinref part="R_LEDS" gate="G$1" pin="2"/>
 <wire x1="-33.02" y1="129.54" x2="-30.48" y2="129.54" width="0.1524" layer="91"/>
 <label x="-30.48" y="129.54" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="E_DATA" class="0">
+<segment>
+<pinref part="EFFECT_LEDS" gate="G$1" pin="3"/>
+<wire x1="15.24" y1="132.08" x2="17.78" y2="132.08" width="0.1524" layer="91"/>
+<label x="17.78" y="132.08" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="PB0(ICP)"/>
+<wire x1="53.34" y1="48.26" x2="55.88" y2="48.26" width="0.1524" layer="91"/>
+<label x="55.88" y="48.26" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="E_SCK" class="0">
+<segment>
+<pinref part="EFFECT_LEDS" gate="G$1" pin="2"/>
+<wire x1="15.24" y1="129.54" x2="17.78" y2="129.54" width="0.1524" layer="91"/>
+<label x="17.78" y="129.54" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="53.34" y1="45.72" x2="55.88" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PB1(OC1A)"/>
+<label x="55.88" y="45.72" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
