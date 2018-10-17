@@ -3,9 +3,10 @@
 
 #include "Effect.h"
 #include "NoEffect.h"
+#include "BottomUp.h"
 #include "Strobe.h"
 
-const uint8_t UPDATE_DURRATION = 5;
+const uint8_t UPDATE_DURRATION = 15;
 
 class Effects{
   public:
@@ -20,7 +21,8 @@ class Effects{
     Strip rightStrip;
 
     Effect* effect;
-    NoEffect noEffect;
+    //NoEffect noEffect;
+    BottomUp bottomUp;
     Strobe strobe;
 
     bool blinkerOrEffect(Strip &strip, Data &data, bool blink);
