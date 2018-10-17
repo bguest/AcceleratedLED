@@ -4,9 +4,7 @@
 #include "Effects.h"
 #include "Blinkers.h"
 #include "Data.h"
-#include <ADXL362.h>
-
-#define PRINT_ACCELEROMETER
+#include "Accelerometer.h"
 
 class AcceleratedLED328{
   public:
@@ -18,7 +16,7 @@ class AcceleratedLED328{
     Data data;
     Blinkers blinkers;
     Effects effects;
-    ADXL362 accelerometer;
+    Accelerometer accelerometer;
 };
 
 #endif
