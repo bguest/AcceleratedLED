@@ -10,6 +10,7 @@ Accelerometer::Accelerometer(){
   for(uint8_t i=0; i<CHANNEL_COUNT; i++ ){
     sums[i]=0;
   }
+  lastRun = 0;
 }
 
 void Accelerometer::init(){
@@ -20,6 +21,14 @@ void Accelerometer::init(){
 }
 
 void Accelerometer::run(Data &data){
+  unsigned long currMillis = millis();
+
+  uint8_t updateDurration = 5;
+  if(currMillis - lastRun < updateDurration){
+    return;
+  }
+
+  lastRun = currMillis;
 
   int16_t newValues[4];
 

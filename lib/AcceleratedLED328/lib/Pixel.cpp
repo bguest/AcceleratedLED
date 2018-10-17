@@ -21,6 +21,10 @@ void Pixel::set(uint16_t h, uint8_t s, uint8_t v){
   hsv.hue = h; hsv.sat = s; hsv.val = v;
 }
 
+void Pixel::setBlack(){
+  hsv.val = 0;
+}
+
 uint32_t Pixel::color()
 {
   return ColorFromHSV(hsv);

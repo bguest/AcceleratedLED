@@ -14,6 +14,7 @@ class Pixel{
     uint32_t color();
     void setFrom(Pixel* pixel);
     void set(uint16_t h, uint8_t s, uint8_t v);
+    void setBlack();
 
 };
 

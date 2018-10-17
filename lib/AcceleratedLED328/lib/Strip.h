@@ -14,6 +14,8 @@ class Strip {
 
     //Get
     Pixel* pixel(uint8_t index);
+    Pixel* farPixel(uint8_t index);
+    uint8_t stripLength();
 
     //Set
     void setColor(ColorHSV color);

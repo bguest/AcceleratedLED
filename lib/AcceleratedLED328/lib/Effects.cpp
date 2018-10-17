@@ -5,17 +5,17 @@ Effects::Effects(){
   lastRun = 0;
 }
 
-#define L_DO 6
-#define L_BO 7
+#define L_DATA 6
+#define L_CLK 7
 
-#define R_DO 4
-#define R_BO 5
+#define R_DATA 4
+#define R_CLK 5
 
 void Effects::init(){
-  leftStrip.init(L_DO, L_BO);
-  rightStrip.init(R_DO, R_BO);
+  leftStrip.init(L_DATA, L_CLK);
+  rightStrip.init(R_DATA, R_CLK);
 
-  effect = &noEffect;
+  effect = &bottomUp;
 }
 
 void Effects::run(Data &data){

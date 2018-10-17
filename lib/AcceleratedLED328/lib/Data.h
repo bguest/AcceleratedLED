@@ -2,6 +2,7 @@
 #define DATA_H
 
 const uint16_t HUE_ORANGE = ((uint32_t)17*0xFF/360) << 8;
+const uint16_t HUE_RED = ((uint32_t)0*0xFF/360) << 8;
 
 struct Acceleration16{
   int16_t x;
