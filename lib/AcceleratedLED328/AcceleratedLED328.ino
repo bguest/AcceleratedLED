@@ -1,4 +1,4 @@
-#include <Adafruit_WS2801.h>
+#include <Adafruit_DotStar.h>
 #include <AcceleratedLED328.h>
 
 #define DEBUG

@@ -5,7 +5,7 @@ Strip::Strip(){
 }
 
 void Strip::init(uint8_t dataPin, uint8_t clkPin){
-  strip = Adafruit_WS2801(STRIP_LENGTH, dataPin, clkPin);
+  strip = Adafruit_DotStar(STRIP_LENGTH, dataPin, clkPin, DOTSTAR_RGB);
   strip.begin();
   strip.show();
 }
