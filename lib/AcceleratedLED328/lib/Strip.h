@@ -1,7 +1,7 @@
 #ifndef STRIP_H
 #define STRIP_H
 
-#include "Adafruit_WS2801.h"
+#include "Adafruit_DotStar.h"
 #include "Pixel.h"
 
 const uint8_t STRIP_LENGTH = 10;
@@ -19,12 +19,13 @@ class Strip {
 
     //Set
     void setColor(ColorHSV color);
+    void setBlack();
 
     //Update
     void update();
 
   private:
-    Adafruit_WS2801 strip;
+    Adafruit_DotStar strip;
     Pixel pixels[STRIP_LENGTH];
 
 };

@@ -10,7 +10,6 @@ void BottomUp::run(Strip &strip, Data &data){
 
   uint8_t brakeDots = map(currBrake, 0, maxBrake, 0, STRIP_LENGTH );
 
-
   for(uint8_t i=0; i<strip.stripLength(); i++){
     Pixel* pixel = strip.farPixel(i);
     if( i <= maxBrake){
@@ -19,5 +18,12 @@ void BottomUp::run(Strip &strip, Data &data){
       pixel->setBlack();
     }
   }
+
+#if false
+  Serial.print(currBrake); Serial.print(" ");
+  Serial.print(maxBrake); Serial.print(" ");
+  Serial.print(brakeDots); Serial.print(" ");
+  Serial.print("\n");
+#endif
 
 }

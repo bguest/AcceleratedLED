@@ -32,7 +32,8 @@ bool Effects::blinkerOrEffect(Strip &strip, Data &data, bool blink){
   if(blink){
     strobe.run(strip, data);
   }else{
-    effect -> run(strip, data);
+    strip.setBlack();
+    effect->run(strip, data);
   }
   strip.update();
 }
