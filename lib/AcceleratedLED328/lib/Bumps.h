@@ -3,6 +3,7 @@
 
 #include "Arduino.h"
 #include "Effect.h"
+#include "Range.h"
 
 class Bumps: public Effect {
   public:
@@ -10,6 +11,12 @@ class Bumps: public Effect {
     void run(Strip &strip, Data &data);
 
   private:
+    Range<int16_t> maxValue;
+    Range<int16_t> currValue;
+
+    unsigned long lastStep;
+
+    void pushValue(uint16_t value);
     uint16_t values[STRIP_LENGTH];
 };
 

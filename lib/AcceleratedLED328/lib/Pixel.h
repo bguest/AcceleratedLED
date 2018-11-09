@@ -15,6 +15,8 @@ class Pixel{
     void setFrom(Pixel* pixel);
     void set(uint16_t h, uint8_t s, uint8_t v);
     void setBlack();
+    void setValue(uint8_t v);
+    void multiplyValue(uint8_t factor);
 
 };
 
