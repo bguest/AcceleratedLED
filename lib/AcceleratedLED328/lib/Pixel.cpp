@@ -24,6 +24,13 @@ void Pixel::set(uint16_t h, uint8_t s, uint8_t v){
 void Pixel::setBlack(){
   hsv.val = 0;
 }
+void Pixel::setValue(uint8_t v){
+  hsv.val = v;
+}
+
+void Pixel::multiplyValue(uint8_t factor){
+  hsv.val = (uint16_t)hsv.val * (uint16_t)factor / (0xFF >> 1);
+}
 
 uint32_t Pixel::color()
 {

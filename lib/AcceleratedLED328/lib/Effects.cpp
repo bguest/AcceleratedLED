@@ -15,7 +15,7 @@ void Effects::init(){
   leftStrip.init(L_DATA, L_CLK);
   rightStrip.init(R_DATA, R_CLK);
 
-  effect = &bottomUp;
+  effect = &solidValue;
 }
 
 void Effects::run(Data &data){
@@ -32,8 +32,9 @@ bool Effects::blinkerOrEffect(Strip &strip, Data &data, bool blink){
   if(blink){
     strobe.run(strip, data);
   }else{
-    strip.setBlack();
-    effect->run(strip, data);
+      strip.setBlack();
+      effect->run(strip, data);
+      bumps.run(strip, data);
   }
   strip.update();
 }
