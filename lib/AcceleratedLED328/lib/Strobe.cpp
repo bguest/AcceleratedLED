@@ -6,7 +6,8 @@ Strobe::Strobe(){
   isOn = false;
 }
 
-void Strobe::run(Strip &strip, Data &data){
+void Strobe::run(Sign &sign, Data &data){
+  /*
   unsigned long currMillis = millis();
   if( currMillis - lastStep < durration ) { return; }
   lastStep = currMillis;
@@ -20,6 +21,7 @@ void Strobe::run(Strip &strip, Data &data){
     color = ColorHSV(0xFF, 0xFF, 0x00);
   }
   strip.setColor(color);
+  */
 
 }
 

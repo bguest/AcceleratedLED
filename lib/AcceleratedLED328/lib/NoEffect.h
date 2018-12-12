@@ -7,7 +7,7 @@
 class NoEffect: public Effect {
   public:
     NoEffect();
-    void run(Strip &strip, Data &data);
+    void run(Sign &sign, Data &data);
 
   private:
 

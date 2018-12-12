@@ -1,12 +1,12 @@
-#ifndef SOLID_BLINK_H
-#define SOLID_BLINK_H
+#ifndef EFFECT_BLINK_H
+#define EFFECT_BLINK_H
 
 #include "Arduino.h"
 #include "Effect.h"
 
-class Strobe: public Effect {
+class EffectBlink: public Effect {
   public:
-    Strobe();
+    EffectBlink();
     void run(Sign &sign, Data &data);
 
   private:
@@ -14,6 +14,9 @@ class Strobe: public Effect {
     bool isOn;
     uint8_t durration;
     unsigned long lastStep;
+    void setSegmentColor(Segment *segment);
 
 };
+
 #endif
+

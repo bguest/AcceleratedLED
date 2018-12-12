@@ -3,7 +3,7 @@
 Effect::Effect(){
 }
 
-void Effect::run(Strip &strip, Data &data){
+void Effect::run(Sign &sign, Data &data){
 }
 
 

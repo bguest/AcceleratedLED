@@ -8,7 +8,7 @@
 class Bumps: public Effect {
   public:
     Bumps();
-    void run(Strip &strip, Data &data);
+    void run(Sign &sign, Data &data);
 
   private:
     Range<int16_t> maxValue;
@@ -17,7 +17,7 @@ class Bumps: public Effect {
     unsigned long lastStep;
 
     void pushValue(uint16_t value);
-    uint16_t values[STRIP_LENGTH];
+    //uint16_t values[STRIP_LENGTH];
 };
 
 #endif

@@ -1,9 +1,11 @@
 #include "Pixel.h"
+#include "Segment.h"
 
 Pixel::Pixel(){
   hsv.hue = 0;
   hsv.sat = 0xFF;
   hsv.val = 0xFF;
+  index = 0;
 }
 
 // Input a value 0 to 255 to get a color value.
@@ -12,6 +14,9 @@ uint32_t Color(uint8_t r, uint8_t g, uint8_t b) {
   return ((uint32_t)b << 16) | ((uint32_t)g <<  8) | r;
 }
 
+Point Pixel::point(){
+  return parent->pointForIndex(index);
+}
 
 void Pixel::setFrom(Pixel* pixel){
   hsv = pixel->hsv;

@@ -4,43 +4,41 @@ Strip::Strip(){
 
 }
 
-void Strip::init(uint8_t dataPin, uint8_t clkPin){
-  strip = Adafruit_DotStar(STRIP_LENGTH, dataPin, clkPin, DOTSTAR_RGB);
+void Strip::init(
+    uint8_t dataPin, uint8_t clkPin,
+    uint8_t segCount,
+    Segment segs[],
+    uint8_t segIdxs[])
+{
+
+  segments = new Segment*[segmentCount];
+  segmentCount = segCount;
+
+  uint8_t stripLength = 0;
+  for(uint8_t i=0; i<segmentCount; i++){
+    uint8_t idx = segIdxs[i];
+    Segment* currSeg = &segs[idx];
+    segments[i] = currSeg;
+    stripLength += currSeg->length;
+  }
+
+  strip = Adafruit_DotStar(stripLength, dataPin, clkPin, DOTSTAR_RGB);
   strip.begin();
   strip.show();
 }
 
-Pixel* Strip::pixel(uint8_t index){
-  return &pixels[index];
-}
-
-Pixel* Strip::farPixel(uint8_t index){
-  return &pixels[STRIP_LENGTH - index - 1];
-}
-
-uint8_t Strip::stripLength(){
-  return STRIP_LENGTH;
-}
-
-void Strip::setColor(ColorHSV color){
-  for(uint8_t i=0; i<this->stripLength(); i++){
-    Pixel *pixel = this->pixel(i);
-    pixel->hsv = color;
-  }
-}
-void Strip::setBlack(){
-  for(uint8_t i=0; i<this->stripLength(); i++){
-    Pixel *pixel = this->pixel(i);
-    pixel->setBlack();
-  }
-}
 
 void Strip::update(){
 
   // Set rest of string
-  for(uint8_t idx = 0; idx<STRIP_LENGTH; idx++){
-    Pixel* pixel = this->pixel(idx);
-    strip.setPixelColor(idx, pixel->color());
+  uint8_t i=0;
+  for(uint8_t segNum = 0; segNum<segmentCount; segNum++){
+    Segment* currSeg = segments[segNum];
+    for(uint8_t pixNum = 0; pixNum<currSeg->length; pixNum++){
+      Pixel* pixel = currSeg->pixel(pixNum);
+      strip.setPixelColor(i, pixel->color() );
+      i++;
+    }
   }
   strip.show();
 }

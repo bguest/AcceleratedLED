@@ -7,7 +7,7 @@
 class BottomUp: public Effect {
   public:
     BottomUp();
-    void run(Strip &strip, Data &data);
+    void run(Sign &sign, Data &data);
 
   private:
     int16_t maxBrake;

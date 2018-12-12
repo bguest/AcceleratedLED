@@ -1,12 +1,12 @@
 #ifndef EFFECT_H
 #define EFFECT_H
 
-#include "Strip.h"
+#include "Sign.h"
 #include "Data.h"
 
 class Effect{
   public:
     Effect();
-    virtual void run(Strip &strip, Data &data);
+    virtual void run(Sign &sign, Data &data);
 };
 #endif

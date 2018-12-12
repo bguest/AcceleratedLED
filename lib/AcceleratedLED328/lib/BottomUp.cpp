@@ -4,7 +4,8 @@ BottomUp::BottomUp(){
   maxBrake = 0;
 }
 
-void BottomUp::run(Strip &strip, Data &data){
+void BottomUp::run(Sign &sign, Data &data){
+  /*
   int16_t currBrake = max(0, -data.acceleration.y);
   maxBrake = max(maxBrake, -data.acceleration.y);
 
@@ -25,5 +26,6 @@ void BottomUp::run(Strip &strip, Data &data){
   Serial.print(brakeDots); Serial.print(" ");
   Serial.print("\n");
 #endif
+*/
 
 }
